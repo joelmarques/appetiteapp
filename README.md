@@ -8,5 +8,3 @@ as tecnologias:
 Ionic Framework; Angular.js; Node.js; Sails.js; MongoDB; Bower; Cordova
 
 ionic view: a4137652
-
-<a href="https://photos.google.com/photo/AF1QipMUZXrEsi3PW_qi41YfH7eEwtRlO-2y-Mm_k6jM">imagens do app</a>
