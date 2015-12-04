@@ -1,0 +1,48 @@
+.side-menu-logo .logo {
+    text-transform: none;
+    color: #FFF;
+    border: 0;
+    font-size: 30px;
+}
+
+.side-menu-logo h6{
+  color: #0FD8F0;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.logo h6{
+  color: #0FD8F0;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.scroll-content {
+    background-color: azure;
+    background: url(../img/bg-menu.jpg) no-repeat;
+}
+
+.sidebar .item {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.bar.bar-light {
+    background-color: azure;
+}
+
+.item-complex .item-content, .item-content {
+    background-color: azure;
+}
+
+.product-body .product-info {
+    color: #FFF;
+}
+
+#page-profile .box .info h2.name {
+    font-family: "Berkshire Swash";
+}
+
+#page-profile .box .info .position {
+    margin-bottom: 90px;
+}
