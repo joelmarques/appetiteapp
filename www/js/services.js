@@ -21,6 +21,25 @@ app.factory('MenuUFPA', function() {
 
 });
 
+app.factory('MenuUNICAMP', function() {
+
+  var menu = {
+    id: 1,
+    class: 'item-2',
+  	img: 'img/category/ruunicamp.jpg',
+    name: 'RU UNICAMP',
+    lastText: 'Cardápio do dia'
+  };
+
+  return {
+    menu: function() {
+      return menu;
+    }
+  };
+
+});
+
+
 app.service('ServicoUFPA', function($http) {
 
   return {

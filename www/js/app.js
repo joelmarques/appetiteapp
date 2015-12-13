@@ -32,6 +32,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 controller: 'CardapioUfpaCtrl'
             })
 
+            .state('cardapio_unicamp', {
+                url: "/cardapio_unicamp",
+                templateUrl: "templates/app/cardapio_unicamp.html",
+                controller: 'CardapioUnicampCtrl'
+            })
+
             .state('product_menu', {
                 url: "/product/menu/:cateId",
                 templateUrl: "templates/app/product_menu.html",
