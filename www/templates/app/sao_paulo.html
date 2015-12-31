@@ -1,0 +1,19 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-light">
+        <div class="buttons">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </div>
+        <h1 class="title">São Paulo</h1>
+    </ion-header-bar>
+    <ion-content>
+        <ul class="cate-lv1">
+          <li class="item-background cate-lv1-item" ui-sref="cardapio_unicamp()"
+          style="background: url({{menuUNICAMP.img}}) no-repeat; background-size: cover;">
+              <div class="item-wrapper">
+                  <h2>{{menuUNICAMP.name}}</h2>
+                  <p>{{menuUNICAMP.lastText}}</p>
+              </div>
+          </li>          
+        </ul>
+    </ion-content>
+</ion-view>

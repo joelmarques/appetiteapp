@@ -47,11 +47,13 @@ angular.module('starter.controllers', [])
 
         $scope.init = function(){
 
-          $http.get('http://appetitews.herokuapp.com/ruunicamp/all').success(function(data) {
-                  $scope.cardapioDoDia = data;
-          }).error(function(data){
-            alert("Não foi possível acessar o cardápio. Tente novamente mais tarde.");
-          });
+          alert("Não existe cardápio cadastrado no momento !");
+
+          // $http.get('http://appetitews.herokuapp.com/ruunicamp/all').success(function(data) {
+          //         $scope.cardapioDoDia = data;
+          // }).error(function(data){
+          //   alert("Não foi possível acessar o cardápio. Tente novamente mais tarde.");
+          // });
         };
 
 
