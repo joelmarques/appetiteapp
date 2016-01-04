@@ -4,8 +4,9 @@ angular.module('starter.controllers', [])
 
     })
 
-    .controller('AppCtrl', function ($scope, MenuUFPA, MenuUNICAMP, Cates, Products, Carts) {
+    .controller('AppCtrl', function ($scope, MenuUFPA, MenuUFRA, MenuUNICAMP, Cates, Products, Carts) {
         $scope.menuUFPA = MenuUFPA.menu();
+        $scope.menuUFRA = MenuUFRA.menu();
         $scope.menuUNICAMP = MenuUNICAMP.menu();
         $scope.cates = Cates.all();
         $scope.productData = {};
@@ -25,15 +26,23 @@ angular.module('starter.controllers', [])
 
         $scope.init = function(){
 
-          alert("Estamos em férias coletivas. O fornecimento das refeições voltará ao normal em 04/01/2016. Boas Festas!!");
+          // alert("Estamos em férias coletivas. O fornecimento das refeições voltará ao normal em 04/01/2016. Boas Festas!!");
 
-          // $http.get('http://appetitews.herokuapp.com/ruufpa/all').success(function(data) {
-          //         $scope.diasDaSemana = data;
-          // }).error(function(data){
-          //   alert("Não foi possível acessar o cardápio. Tente novamente mais tarde.");
-          // });
+          $http.get('http://appetitews.herokuapp.com/ruufpa/all').success(function(data) {
+                  $scope.diasDaSemana = data;
+          }).error(function(data){
+            alert("Não foi possível acessar o cardápio. Tente novamente mais tarde.");
+          });
         };
 
+
+        $scope.goBack = function () {
+            window.history.back();
+        };
+    })
+
+    .controller('CardapioUfraCtrl', function ($scope, $http, MenuUFRA) {
+        $scope.menu = MenuUFRA.menu();
 
         $scope.goBack = function () {
             window.history.back();

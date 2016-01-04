@@ -21,10 +21,28 @@ app.factory('MenuUFPA', function() {
 
 });
 
-app.factory('MenuUNICAMP', function() {
+app.factory('MenuUFRA', function() {
 
   var menu = {
     id: 1,
+    class: 'item-2',
+  	img: 'img/category/1.jpg',
+    name: 'RU UFRA',
+    lastText: 'Cardápio Semanal'
+  };
+
+  return {
+    menu: function() {
+      return menu;
+    }
+  };
+
+});
+
+app.factory('MenuUNICAMP', function() {
+
+  var menu = {
+    id: 2,
     class: 'item-2',
   	img: 'img/category/ruunicamp.jpg',
     name: 'RU UNICAMP',
@@ -38,7 +56,6 @@ app.factory('MenuUNICAMP', function() {
   };
 
 });
-
 
 app.service('ServicoUFPA', function($http) {
 
@@ -63,18 +80,20 @@ app.factory('Cates', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var cates = [{
-    id: 1,
-	class: 'item-2',
-	img: 'img/category/1.jpg',
-    name: 'RU UFRA',
-    lastText: 'Ilustrativo'
-  }, {
+  var cates = [
+    //{
+  //   id: 1,
+	// class: 'item-2',
+	// img: 'img/category/1.jpg',
+  //   name: 'RU UFRA',
+  //   lastText: 'Ilustrativo'
+  // },
+  {
     id: 2,
 	class: 'item-3',
 	img: 'img/category/2.jpg',
     name: 'RU UEPA',
-    lastText: 'Ilustrativo'
+    lastText: 'Cardápio Semanal'
   }];
 
   return {

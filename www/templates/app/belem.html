@@ -14,7 +14,16 @@
                   <p>{{menuUFPA.lastText}}</p>
               </div>
           </li>
-            <li class="item-background cate-lv1-item" ng-repeat="cate in cates" ui-sref="product_menu({ cateId: cate.id })"
+
+          <li class="item-background cate-lv1-item" ui-sref="cardapio_ufra()"
+          style="background: url({{menuUFRA.img}}) no-repeat; background-size: cover;">
+              <div class="item-wrapper">
+                  <h2>{{menuUFRA.name}}</h2>
+                  <p>{{menuUFRA.lastText}}</p>
+              </div>
+          </li>
+<!-- ui-sref="product_menu({ cateId: cate.id })" -->
+            <li class="item-background cate-lv1-item" ng-repeat="cate in cates" onclick="alert('Não existe cardápio cadastrado no momento!')"
             style="background: url({{cate.img}}) no-repeat; background-size: cover;">
                 <div class="item-wrapper">
                     <h2>{{cate.name}}</h2>
