@@ -1,3 +1,4 @@
+
 angular.module('starter.controllers', [])
 
     .controller('IntroCtrl', function ($scope) {
@@ -21,15 +22,11 @@ angular.module('starter.controllers', [])
     .controller('CardapioUfpaCtrl', function ($scope, $http, MenuUFPA, ServicoUFPA) {
         $scope.menu = MenuUFPA.menu();
 
-        $scope.diasDaSemana = [];
-        // $scope.diasDaSemana = ServicoUFPA.all();
+        $scope.cardapio = {};
 
-        $scope.init = function(){
-
-          // alert("Estamos em férias coletivas. O fornecimento das refeições voltará ao normal em 04/01/2016. Boas Festas!!");
-
+        $scope.init = function() {
           $http.get('http://appetitews.herokuapp.com/ruufpa/all').success(function(data) {
-                  $scope.diasDaSemana = data;
+            $scope.cardapio = data;
           }).error(function(data){
             alert("Não foi possível acessar o cardápio. Tente novamente mais tarde.");
           });

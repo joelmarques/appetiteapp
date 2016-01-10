@@ -9,13 +9,11 @@
     <ion-content ng-init="init()">
       <div class="card">
         <div class="item item-text-wrap">
-          <h6>Período de 04/01/2016 até o dia 08/01/2016</h6>
-          <h6>ALMOÇO : 11:30 ÀS 14:30 h - RU BÁSICO E PROFISSIONAL</h6>
-          <h6>JANTAR : 18:00 ÀS 19:00 h - SOMENTE NO RU BÁSICO</h6>
+          <h6 ng-repeat="cabecalho in cardapio.cabecalhos">{{cabecalho}}</h6>
         </div>
       </div>
         <div class="cate-lv2">
-            <div class="card cate-lv2-item" ng-repeat="dia in diasDaSemana">
+            <div class="card cate-lv2-item" ng-repeat="dia in cardapio.diasDaSemana">
                 <div class="item item-thumbnail-left item-text-wrap" >
                     <img ng-src="img/prato.jpg">
 

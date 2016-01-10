@@ -62,15 +62,15 @@ app.service('ServicoUFPA', function($http) {
   return {
     all: function(){
 
-      var diasDaSemana = [];
+      var cardapio = {};
 
-      $http.get(urlWebService + 'ruufpa/all').success(function(data) {
-              diasDaSemana = data;
+      $http.get('http://localhost:1337/ruufpa/all').success(function(data) {
+              cardapio = data;
       }).error(function(data){
         alert("Sem Atualização");
       });
 
-      return diasDaSemana;
+      return cardapio;
     }
   };
 
