@@ -1,5 +1,5 @@
 
-var urlWebServiceUFPA = "http://appetitews.herokuapp.com/";
+var urlWebService = "http://appetitews.herokuapp.com/";
 
 var app = angular.module('starter.services', [])
 
@@ -8,7 +8,7 @@ app.factory('MenuUFPA', function() {
   var menu = {
     id: 0,
     class: 'item-1',
-  	img: 'img/category/ruufpa.jpg',
+  	img: 'img/ruufpa.jpg',
     name: 'RU UFPA',
     lastText: 'Cardápio Semanal'
   };
@@ -26,7 +26,7 @@ app.factory('MenuUFRA', function() {
   var menu = {
     id: 1,
     class: 'item-2',
-  	img: 'img/category/1.jpg',
+  	img: 'img/ruufra.jpg',
     name: 'RU UFRA',
     lastText: 'Cardápio Semanal'
   };
@@ -44,7 +44,7 @@ app.factory('MenuUNICAMP', function() {
   var menu = {
     id: 2,
     class: 'item-2',
-  	img: 'img/category/ruunicamp.jpg',
+  	img: 'img/ruunicamp.jpg',
     name: 'RU UNICAMP',
     lastText: 'Cardápio do dia'
   };
@@ -64,7 +64,7 @@ app.service('ServicoUFPA', function($http) {
 
       var diasDaSemana = [];
 
-      $http.get(urlWebServiceUFPA + 'ruufpa/all').success(function(data) {
+      $http.get(urlWebService + 'ruufpa/all').success(function(data) {
               diasDaSemana = data;
       }).error(function(data){
         alert("Sem Atualização");
@@ -78,20 +78,12 @@ app.service('ServicoUFPA', function($http) {
 
 app.factory('Cates', function() {
   // Might use a resource here that returns a JSON array
-
   // Some fake testing data
   var cates = [
-    //{
-  //   id: 1,
-	// class: 'item-2',
-	// img: 'img/category/1.jpg',
-  //   name: 'RU UFRA',
-  //   lastText: 'Ilustrativo'
-  // },
   {
-    id: 2,
-	class: 'item-3',
-	img: 'img/category/2.jpg',
+    id: 1,
+	  class: 'item-3',
+	  img: 'img/ruuepa.jpg',
     name: 'RU UEPA',
     lastText: 'Cardápio Semanal'
   }];

@@ -88,11 +88,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                     }
                 }
             })
-            .state('app.profile', {
-                url: "/profile",
+            .state('app.sobre', {
+                url: "/sobre",
                 views: {
                     'menuAppContent': {
-                        templateUrl: "templates/app/profile.html"
+                        templateUrl: "templates/app/sobre.html"
                     }
                 }
             });
