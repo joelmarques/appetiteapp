@@ -19,14 +19,20 @@
 
                     <h2>{{dia.dia}}</h2>
                     <h6 style="color:red">Almoço</h6>
-                    <h3>{{dia.almoco.prato}}</h3>
+                    <h3>PRATO PRINCIPAL (1ª OPÇÃO):</h3>
+                    <h3>{{dia.pratoPrincipal}}</h3>
 
-                    <h4 ng-repeat="acompanhamento in dia.almoco.acompanhamentos">{{acompanhamento}}</h4>
+                    <h3>PRATO VEGETARIANO (2ª OPÇÃO):</h3>
+                    <h3>{{dia.pratoVegetariano}}</h3>
 
-                    <h6 style="color:red">Jantar</h6>
-                    <h3>{{dia.jantar.prato}}</h3>
+                    <h3>ACOMPANHAMENTOS:</h3>
+                    <h3>{{dia.acompanhamentos}}</h3>
 
-                    <h4 ng-repeat="acompanhamento in dia.jantar.acompanhamentos">{{acompanhamento}}</h4>
+                    <h3>SALADAS:</h3>
+                    <h3>{{dia.saladas}}</h3>
+
+                    <h3>SOBREMESA:</h3>
+                    <h3>{{dia.sobremesa}}</h3>
 
                     <br />
                     <div class="price"></div>
@@ -37,7 +43,7 @@
 
         <div class="card">
           <div class="item item-text-wrap">
-            <h6>Cardápio sujeito à alterações. Ajude o Meio Ambiente: traga seu copo ou sua caneca.</h6>
+            <h6>Obs.: Este cardápio está sujeito a alterações.</h6>
           </div>
         </div>
     </ion-content>

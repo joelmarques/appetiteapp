@@ -5,9 +5,10 @@ angular.module('starter.controllers', [])
 
     })
 
-    .controller('AppCtrl', function ($scope, MenuUFPA, MenuUFRA, MenuUNICAMP, Cates, Products, Carts) {
+    .controller('AppCtrl', function ($scope, MenuUFPA, MenuUFRA, MenuUEPA, MenuUNICAMP, Cates, Products, Carts) {
         $scope.menuUFPA = MenuUFPA.menu();
         $scope.menuUFRA = MenuUFRA.menu();
+        $scope.menuUEPA = MenuUEPA.menu();
         $scope.menuUNICAMP = MenuUNICAMP.menu();
         $scope.cates = Cates.all();
         $scope.productData = {};
@@ -26,6 +27,25 @@ angular.module('starter.controllers', [])
 
         $scope.init = function() {
           $http.get('http://appetitews.herokuapp.com/ruufpa/all').success(function(data) {
+            $scope.cardapio = data;
+          }).error(function(data){
+            alert("Não foi possível acessar o cardápio. Tente novamente mais tarde.");
+          });
+        };
+
+
+        $scope.goBack = function () {
+            window.history.back();
+        };
+    })
+
+    .controller('CardapioUepaCtrl', function ($scope, $http, MenuUEPA) {
+        $scope.menu = MenuUEPA.menu();
+
+        $scope.cardapio = {};
+
+        $scope.init = function() {
+          $http.get('http://appetitews.herokuapp.com/ruuepa/all').success(function(data) {
             $scope.cardapio = data;
           }).error(function(data){
             alert("Não foi possível acessar o cardápio. Tente novamente mais tarde.");

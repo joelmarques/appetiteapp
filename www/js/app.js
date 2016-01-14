@@ -38,6 +38,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 controller: 'CardapioUfraCtrl'
             })
 
+            .state('cardapio_uepa', {
+                url: "/cardapio_uepa",
+                templateUrl: "templates/app/cardapio_uepa.html",
+                controller: 'CardapioUepaCtrl'
+            })
+
             .state('cardapio_unicamp', {
                 url: "/cardapio_unicamp",
                 templateUrl: "templates/app/cardapio_unicamp.html",

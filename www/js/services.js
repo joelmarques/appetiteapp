@@ -39,6 +39,24 @@ app.factory('MenuUFRA', function() {
 
 });
 
+app.factory('MenuUEPA', function() {
+
+  var menu = {
+    id: 2,
+    class: 'item-2',
+  	img: 'img/ruuepa.jpg',
+    name: 'RU UEPA',
+    lastText: 'Cardápio Semanal'
+  };
+
+  return {
+    menu: function() {
+      return menu;
+    }
+  };
+
+});
+
 app.factory('MenuUNICAMP', function() {
 
   var menu = {

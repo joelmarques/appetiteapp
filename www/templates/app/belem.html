@@ -23,14 +23,14 @@
                   <p>{{menuUFRA.lastText}}</p>
               </div>
           </li>
-<!-- ui-sref="product_menu({ cateId: cate.id })" -->
-            <li class="item-background cate-lv1-item" ng-repeat="cate in cates" onclick="alert('Não existe cardápio cadastrado no momento!')"
-            style="background: url({{cate.img}}) no-repeat; background-size: cover;">
-                <div class="item-wrapper">
-                    <h2>{{cate.name}}</h2>
-                    <p>{{cate.lastText}}</p>
-                </div>
-            </li>
+
+          <li class="item-background cate-lv1-item" ui-sref="cardapio_uepa()"
+          style="background: url({{menuUEPA.img}}) no-repeat; background-size: cover;">
+              <div class="item-wrapper">
+                  <h2>{{menuUEPA.name}}</h2>
+                  <p>{{menuUEPA.lastText}}</p>
+              </div>
+          </li>
         </ul>
     </ion-content>
 </ion-view>
