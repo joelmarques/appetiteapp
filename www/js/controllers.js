@@ -61,6 +61,16 @@ angular.module('starter.controllers', [])
     .controller('CardapioUfraCtrl', function ($scope, $http, MenuUFRA) {
         $scope.menu = MenuUFRA.menu();
 
+        $scope.cardapio = {};
+
+        $scope.init = function() {
+          $http.get('http://appetitews.herokuapp.com/ruufra/all').success(function(data) {
+            $scope.cardapio = data;
+          }).error(function(data){
+            alert("Não foi possível acessar o cardápio. Tente novamente mais tarde.");
+          });
+        };
+
         $scope.goBack = function () {
             window.history.back();
         };

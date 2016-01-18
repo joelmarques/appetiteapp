@@ -6,116 +6,35 @@
             </ion-nav-buttons>
         </ion-nav-bar>
     </ion-header-bar>
-    <ion-content>
+    <ion-content ng-init="init()">
       <div class="card">
         <div class="item item-text-wrap">
-          <h6>Período de 14/12/2015 até o dia 18/12/2015</h6>
+          <h6 style="text-align: center;" ng-repeat="cabecalho in cardapio.cabecalhos">{{cabecalho}}</h6>
         </div>
       </div>
         <div class="cate-lv2">
-            <div class="card cate-lv2-item">
+            <div class="card cate-lv2-item" ng-repeat="dia in cardapio.diasDaSemana">
                 <div class="item item-thumbnail-left item-text-wrap" >
                     <img ng-src="img/prato.jpg">
 
-                    <h2>Segunda</h2>
-                    <h3>PICADINHO COM MACARRÃO</h3>
+                    <h2>{{dia.dia}}</h2>
+                    <h3>{{dia.pratoPrincipal}}</h3>
 
-                    <h4>SALADA CRUA</h4>
-                    <h4>FEIJÃO RAJADO</h4>
-                    <h4>FAROFA</h4>
-                    <h4>SOBREMESA: MELÃO</h4>
+                    <h4>{{dia.acompanhamentos}}</h4>
 
-                    <h6>Valor Nutricional: 975,75 cal/ 85,2 g de carboidrato/ 48,74 g de proteínas/ 50,3 g de lipídios</h6>
-
+                    <h4>SOBREMESA: {{dia.sobremesa}}</h4>
+                    <h6>Valor Nutricional: {{dia.valorNutricional}}</h6>
                     <br />
                     <div class="price"></div>
                     <div class="like"><i class="ion-heart"></i> 1065</div>
                 </div>
             </div>
+        </div>
 
-            <div class="card cate-lv2-item">
-                <div class="item item-thumbnail-left item-text-wrap" >
-                    <img ng-src="img/prato.jpg">
-
-                    <h2>Terça</h2>
-                    <h3>BIFE NA CHAPA</h3>
-
-                    <h4>SALADA MISTA</h4>
-                    <h4>ARROZ TEMPERADO</h4>
-                    <h4>FEIJÃO CARIOQUINHA</h4>
-                    <h4>FAROFA</h4>
-                    <h4>SOBREMESA: PERA</h4>
-
-                    <h6>Valor Nutricional: 1.178,9 cal/ 133,06 g de carboidrato/ 56,53 g de proteínas/ 46,9 g de lipídios</h6>
-
-                    <br />
-                    <div class="price"></div>
-                    <div class="like"><i class="ion-heart"></i> 1065</div>
-                </div>
-            </div>
-
-            <div class="card cate-lv2-item">
-                <div class="item item-thumbnail-left item-text-wrap" >
-                    <img ng-src="img/prato.jpg">
-
-                    <h2>Quarta</h2>
-                    <h3>GUISADO DE CARNE E LEGUMES</h3>
-
-                    <h4>ARROZ BRANCO</h4>
-                    <h4>FEIJÃO PRETO</h4>
-                    <h4>FARINHA</h4>
-                    <h4>SOBREMESA: BANANA</h4>
-
-                    <h6>Valor Nutricional: 1.172,32 cal/ 149,35 g de carboidrato/ 65,44 g de proteínas/ 36,79 g de lipídios</h6>
-
-                    <br />
-                    <div class="price"></div>
-                    <div class="like"><i class="ion-heart"></i> 1065</div>
-                </div>
-            </div>
-
-            <div class="card cate-lv2-item">
-                <div class="item item-thumbnail-left item-text-wrap" >
-                    <img ng-src="img/prato.jpg">
-
-                    <h2>Quinta</h2>
-                    <h3>CANJA/ FRANGO GUISADO</h3>
-
-                    <h4>PURÊ DE LEGUMES</h4>
-                    <h4>ARROZ TEMPERADO</h4>
-                    <h4>FEIJÃO JALO</h4>
-                    <h4>FAROFA</h4>
-                    <h4>SOBREMESA: MAMÃO</h4>
-
-                    <h6>Valor Nutricional: 1.192,43 cal/ 147,33 g de carboidrato/ 69,94 g de proteínas/ 36,47 g de lipídios</h6>
-
-                    <br />
-                    <div class="price"></div>
-                    <div class="like"><i class="ion-heart"></i> 1065</div>
-                </div>
-            </div>
-
-            <div class="card cate-lv2-item">
-                <div class="item item-thumbnail-left item-text-wrap" >
-                    <img ng-src="img/prato.jpg">
-
-                    <h2>Sexta</h2>
-
-                    <h3>FEIJOADA COMPLETA</h3>
-
-                    <h4>COUVE À MINEIRA</h4>
-                    <h4>ARROZ BRANCO</h4>
-                    <h4>FEIJÃO PRETO</h4>
-                    <h4>FAROFA</h4>
-                    <h4>SOBREMESA: LARANJA</h4>
-
-                    <h6>Valor Nutricional: 2.593,41 cal/ 220,65 g de carboidrato/ 154,01 g de proteínas/ 117,93 g de lipídios</h6>
-
-                    <br />
-                    <div class="price"></div>
-                    <div class="like"><i class="ion-heart"></i> 1065</div>
-                </div>
-            </div>
+        <div class="card" ng-show="false">
+          <div class="item item-text-wrap">
+            <h6></h6>
+          </div>
         </div>
     </ion-content>
 </ion-view>
