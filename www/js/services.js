@@ -26,7 +26,7 @@ app.factory('MenuUFRA', function() {
   var menu = {
     id: 1,
     class: 'item-2',
-  	img: 'img/ruufra.jpg',
+  	img: 'img/ru_ufra.png',
     name: 'RU UFRA',
     lastText: 'Cardápio Semanal'
   };
