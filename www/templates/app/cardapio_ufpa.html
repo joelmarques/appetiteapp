@@ -1,44 +1,177 @@
 <ion-view view-title="{{menu.name}}">
-    <ion-header-bar align-title="center" class="bar-light">
-        <ion-nav-bar align-title="center">
-            <ion-nav-buttons>
-                <button class="button button-clear button-icon" ng-click="goBack()" ><i class="ion-chevron-left"></i></button>
-            </ion-nav-buttons>
-        </ion-nav-bar>
+    <ion-header-bar class="bar bar-header bar-light">
+        <button class="button icon ion-android-arrow-back color-white" ng-click="goBack()" ></button>
+        <h1 class="title">{{menu.name}}</h1>
     </ion-header-bar>
-    <ion-content ng-init="init()">
-      <div class="card">
-        <div class="item item-text-wrap">
-          <h6 style="text-align: center;" ng-repeat="cabecalho in cardapio.cabecalhos">{{cabecalho}}</h6>
-        </div>
-      </div>
-        <div class="cate-lv2">
-            <div class="card cate-lv2-item" ng-repeat="dia in cardapio.diasDaSemana">
-                <div class="item item-thumbnail-left item-text-wrap" >
-                    <img ng-src="img/prato.jpg">
 
-                    <h2>{{dia.dia}}</h2>
-                    <h6 style="color:red">Almoço</h6>
-                    <h3>{{dia.almoco.prato}}</h3>
+    <div class="bar bar-subheader">
 
-                    <h4 ng-repeat="acompanhamento in dia.almoco.acompanhamentos">{{acompanhamento}}</h4>
+        <md-tabs md-stretch-tabs class="md-verde" md-selected="data.selectedIndex">
+          <md-tab id="segunda" aria-controls="Segunda">
+            SEG
+          </md-tab>
+          <md-tab id="terca" aria-controls="Terça">
+            TER
+          </md-tab>
+          <md-tab id="quarta" aria-controls="Quarta">
+            QUA
+          </md-tab>
+          <md-tab id="quinta" aria-controls="Quinta">
+            QUI
+          </md-tab>
+          <md-tab id="sexta" aria-controls="Sexta">
+            SEX
+          </md-tab>
+        </md-tabs>
 
-                    <h6 style="color:red">Jantar</h6>
-                    <h3>{{dia.jantar.prato}}</h3>
+    </div>
 
-                    <h4 ng-repeat="acompanhamento in dia.jantar.acompanhamentos">{{acompanhamento}}</h4>
 
-                    <br />
-                    <div class="price"></div>
-                    <div class="like"><i class="ion-heart"></i> 1065</div>
-                </div>
+    <ion-content ng-init="init()" overflow-scroll="true" class="has-header has-subheader padding-content">
+
+
+        <md-content flex md-scroll-y class="md-content-transparent">
+            <ui-view >
+                
+                <ng-switch on="data.selectedIndex" >
+                  
+                    <div 
+                       id="{{cardapio.diasDaSemana[0].dia}}"
+                       aria-labelledby="{{cardapio.diasDaSemana[0].dia}}"
+                       ng-switch-when="0"
+                       md-swipe-left="next()"
+                       md-swipe-right="previous()"
+                       >
+
+                    <h3 style="color: #555555; margin-left: 10px;">Almoço (11:30 às 14:30)</h3>
+
+                    <div class="card card--expand">
+                        <div class="item item-divider " style= "background: linear-gradient(to bottom , rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.68)),
+                                url('img/file-frango.png') center / cover ; " >
+                        
+                            <h2 style="color: white;"> Filé de Frango {{cardapio.diasDaSemana[0].dia.almoco.prato}}</h2>
+                        </div>
+
+                        <div class="padding-footer-card">
+                            <p>
+                                <i class="ion-android-favorite icon-custom icon-red"></i>
+                                <a href="#" class="subdued">10</a>
+                                <i class="ion-android-star icon-custom icon-yellow"></i>
+                                <a href="#" class="subdued">5</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #555555; margin-left: 10px;" >Jantar (18:00 às 19:00)</h3>
+
+                    <div class="card card--expand">
+                        <div class="item item-divider " style= "background: linear-gradient(to bottom , rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.68)),
+                                url('img/file-mignon.png') center / cover ; " >
+                        
+                            <h2 style="color: white;"> Filé Bovino{{cardapio.diasDaSemana[0].dia.jantar.prato}}</h2>
+                        </div>
+
+                        <div class="padding-footer-card">
+                            <p>
+                                <i class="ion-android-favorite icon-custom icon-red"></i>
+                                <a href="#" class="subdued">10</a>
+                                <i class="ion-android-star icon-custom icon-yellow"></i>
+                                <a href="#" class="subdued">5</a>
+                            </p>
+                        </div>
+                    </div>
+
+                  </div>
+                  
+                  <div role="tabpanel" 
+                       id="{{cardapio.diasDaSemana[1].dia}}"
+                       aria-labelledby="{{cardapio.diasDaSemana[1].dia}}"
+                       ng-switch-when="1"
+                       md-swipe-left="next()"
+                       md-swipe-right="previous()"
+                       layout="row" >
+                        
+
+                    <h2>{{cardapio.diasDaSemana[1].dia}}</h2>
+
+                  </div>    
+
+                  <div role="tabpanel" 
+                       id="{{cardapio.diasDaSemana[2].dia}}"
+                       aria-labelledby="{{cardapio.diasDaSemana[2].dia}}"
+                       ng-switch-when="2"
+                       md-swipe-left="next()"
+                       md-swipe-right="previous()"
+                       layout="row" >
+                        
+
+                    <h2>{{cardapio.diasDaSemana[2].dia}}</h2>
+
+                  </div>    
+
+                  <div role="tabpanel" 
+                       id="{{cardapio.diasDaSemana[3].dia}}"
+                       aria-labelledby="{{cardapio.diasDaSemana[3].dia}}"
+                       ng-switch-when="3"
+                       md-swipe-left="next()"
+                       md-swipe-right="previous()"
+                       layout="row" >
+                        
+
+                    <h2>{{cardapio.diasDaSemana[3].dia}}</h2>
+
+                  </div>    
+
+                  <div role="tabpanel" 
+                       id="{{cardapio.diasDaSemana[4].dia}}"
+                       aria-labelledby="{{cardapio.diasDaSemana[4].dia}}"
+                       ng-switch-when="4"
+                       md-swipe-left="next()"
+                       md-swipe-right="previous()"
+                       layout="row" >
+                        
+
+                    <h2>{{cardapio.diasDaSemana[4].dia}}</h2>
+
+                  </div>    
+
+              </ng-switch>
+            </ui-view>
+        </md-content>
+
+        <!--<div class="card">
+            <div class="item item-text-wrap">
+              <h6 style="text-align: center;" ng-repeat="cabecalho in cardapio.cabecalhos">{{cabecalho}}</h6>
             </div>
-        </div>
+        </div>-->
+      
+        <!--<div class="cate-lv2">
+                <div class="card cate-lv2-item" ng-repeat="dia in cardapio.diasDaSemana">
+                    <div class="item item-thumbnail-left item-text-wrap" >
+                        
+                        <h2>{{dia.dia}}</h2>
+                        <h6 style="color:red">Almoço</h6>
+                        <h3>{{dia.almoco.prato}}</h3>
 
-        <div class="card">
+                        <h4 ng-repeat="acompanhamento in dia.almoco.acompanhamentos">{{acompanhamento}}</h4>
+
+                        <h6 style="color:red">Jantar</h6>
+                        <h3>{{dia.jantar.prato}}</h3>
+
+                        <h4 ng-repeat="acompanhamento in dia.jantar.acompanhamentos">{{acompanhamento}}</h4>
+
+                        <br />
+                        <div class="price"></div>
+                        <div class="like"><i class="ion-heart"></i> 1065</div>
+                    </div>
+                </div>
+        </div>-->
+
+        <!--<div class="card">
           <div class="item item-text-wrap">
             <h6>Cardápio sujeito à alterações. Ajude o Meio Ambiente: traga seu copo ou sua caneca.</h6>
           </div>
-        </div>
+        </div> --> 
+    
     </ion-content>
 </ion-view>

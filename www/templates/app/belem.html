@@ -1,36 +1,35 @@
 <ion-view>
 
-   <ion-header-bar align-title="center" class="bar-light">
-        <div class="buttons">
-            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
-        </div>
-        <h1 class="title">Belém</h1>
-    </ion-header-bar>
-    <ion-content>
-        <ul class="cate-lv1">
-          <li class="item-background cate-lv1-item" ui-sref="cardapio_ufpa()"
-          style="background: url({{menuUFPA.img}}) no-repeat; background-size: cover;">
-              <div class="item-wrapper">
-                  <h2>{{menuUFPA.name}}</h2>
-                  <p>{{menuUFPA.lastText}}</p>
-              </div>
-          </li>
+  <ion-header-bar class="bar bar-header bar-light">
+    <button class="button icon ion-navicon mdl-js-button mdl-js-ripple-effect color-white" menu-toggle="left"></button>
+    <h1 class="title">Belém</h1>
+  </ion-header-bar>
 
-          <li class="item-background cate-lv1-item" ui-sref="cardapio_ufra()"
-          style="background: url({{menuUFRA.img}}) no-repeat; background-size: cover;">
-              <div class="item-wrapper">
-                  <h2>{{menuUFRA.name}}</h2>
-                  <p>{{menuUFRA.lastText}}</p>
-              </div>
-          </li>
+  <ion-content>
+      <ul class="cate-lv1">
+        <li class="item-background cate-lv1-item" ui-sref="cardapio_ufpa()"
+        style="background: url({{menuUFPA.img}}) no-repeat; background-size: cover;">
+            <div class="item-wrapper">
+                <h2>{{menuUFPA.name}}</h2>
+                <p>{{menuUFPA.lastText}}</p>
+            </div>
+        </li>
 
-          <li class="item-background cate-lv1-item" ui-sref="cardapio_uepa()"
-          style="background: url({{menuUEPA.img}}) no-repeat; background-size: cover;">
-              <div class="item-wrapper">
-                  <h2>{{menuUEPA.name}}</h2>
-                  <p>{{menuUEPA.lastText}}</p>
-              </div>
-          </li>
-        </ul>
-    </ion-content>
+        <li class="item-background cate-lv1-item" ui-sref="cardapio_ufra()"
+        style="background: url({{menuUFRA.img}}) no-repeat; background-size: cover;">
+            <div class="item-wrapper">
+                <h2>{{menuUFRA.name}}</h2>
+                <p>{{menuUFRA.lastText}}</p>
+            </div>
+        </li>
+
+        <li class="item-background cate-lv1-item" ui-sref="cardapio_uepa()"
+        style="background: url({{menuUEPA.img}}) no-repeat; background-size: cover;">
+            <div class="item-wrapper">
+                <h2>{{menuUEPA.name}}</h2>
+                <p>{{menuUEPA.lastText}}</p>
+            </div>
+        </li>
+      </ul>
+  </ion-content>
 </ion-view>
