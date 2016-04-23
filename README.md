@@ -1,4 +1,4 @@
-# Appetite universitário
+# Appetite Universitário
 Um aplicativo para auxiliar universitários a visualizarem
   todo o cardápio disponível diariamente na universidade.
 
