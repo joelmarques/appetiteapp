@@ -8,3 +8,5 @@ as tecnologias:
 Ionic Framework; Angular.js; Node.js; Sails.js; MongoDB; Bower; Cordova
 
 ionic view: a4137652
+
+Disponível no Google Play : goo.gl/CEHK58
